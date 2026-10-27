@@ -631,10 +631,10 @@ impl Display for Attribute<'_> {
       | Self::Doc(Some(argument))
       | Self::Timestamp(Some(argument))
       | Self::WorkingDirectory(argument) => {
-        write!(f, "({argument})")?;
+        write!(f, ": {argument}")?;
       }
       Self::Extension(argument) | Self::Group(argument) => {
-        write!(f, "({argument})")?;
+        write!(f, ": {argument}")?;
       }
       Self::Continue(signals) => {
         if !signals.is_empty() {

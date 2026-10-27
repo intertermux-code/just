@@ -5,7 +5,7 @@ fn invalid_attribute() {
   Test::new()
     .justfile(
       "
-        [doc('bar')]
+        [doc: 'bar']
         set quiet
       ",
     )

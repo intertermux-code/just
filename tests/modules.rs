@@ -1664,7 +1664,7 @@ fn doc_attribute_on_module_may_be_expression() {
     .justfile(
       "
         prefix := 'hello '
-        [doc(prefix + 'world')]
+        [doc: prefix + 'world']
         mod foo
       ",
     )
@@ -1704,19 +1704,19 @@ fn group_attribute_on_module() {
     .write("zee.just", "")
     .justfile(
       "
-        [group('alpha')]
+        [group: 'alpha']
         mod zee
 
-        [group('alpha')]
+        [group: 'alpha']
         mod foo
 
-        [group('alpha')]
+        [group: 'alpha']
         a:
 
-        [group('beta')]
+        [group: 'beta']
         b:
 
-        [group('beta')]
+        [group: 'beta']
         mod bar
 
         c:
@@ -1749,19 +1749,19 @@ fn group_attribute_on_module_unsorted() {
     .write("zee.just", "")
     .justfile(
       "
-        [group('alpha')]
+        [group: 'alpha']
         mod zee
 
-        [group('alpha')]
+        [group: 'alpha']
         mod foo
 
-        [group('alpha')]
+        [group: 'alpha']
         a:
 
-        [group('beta')]
+        [group: 'beta']
         b:
 
-        [group('beta')]
+        [group: 'beta']
         mod bar
 
         c:
@@ -1795,19 +1795,19 @@ fn group_attribute_on_module_list_submodule() {
     .write("zee.just", "f:")
     .justfile(
       "
-        [group('alpha')]
+        [group: 'alpha']
         mod zee
 
-        [group('alpha')]
+        [group: 'alpha']
         mod foo
 
-        [group('alpha')]
+        [group: 'alpha']
         a:
 
-        [group('beta')]
+        [group: 'beta']
         b:
 
-        [group('beta')]
+        [group: 'beta']
         mod bar
 
         c:
@@ -1844,19 +1844,19 @@ fn group_attribute_on_module_list_submodule_unsorted() {
     .write("zee.just", "f:")
     .justfile(
       "
-        [group('alpha')]
+        [group: 'alpha']
         mod zee
 
-        [group('alpha')]
+        [group: 'alpha']
         mod foo
 
-        [group('alpha')]
+        [group: 'alpha']
         a:
 
-        [group('beta')]
+        [group: 'beta']
         b:
 
-        [group('beta')]
+        [group: 'beta']
         mod bar
 
         c:

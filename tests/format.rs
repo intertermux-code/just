@@ -1173,12 +1173,12 @@ fn doc_attribute_suppresses_comment() {
   assert_dump(
     "
         # COMMENT
-        [doc('ATTRIBUTE')]
+        [doc: 'ATTRIBUTE']
         foo:
       ",
     "
         # COMMENT
-        [doc('ATTRIBUTE')]
+        [doc: 'ATTRIBUTE']
         foo:
       ",
   );
@@ -1188,11 +1188,11 @@ fn doc_attribute_suppresses_comment() {
 fn doc_attribute_expression() {
   assert_dump(
     "
-        [doc('f' + 'oo')]
+        [doc: 'f' + 'oo']
         foo:
       ",
     "
-        [doc('f' + 'oo')]
+        [doc: 'f' + 'oo']
         foo:
       ",
   );
@@ -1264,8 +1264,8 @@ fn module_groups_are_preserved() {
   Test::new()
     .justfile(
       r#"
-        [group('bar')]
-        [group("baz")]
+        [group: 'bar']
+        [group: "baz"]
         mod foo
       "#,
     )
@@ -1273,8 +1273,8 @@ fn module_groups_are_preserved() {
     .arg("--dump")
     .stdout(
       r#"
-        [group('bar')]
-        [group("baz")]
+        [group: 'bar']
+        [group: "baz"]
         mod foo
       "#,
     )

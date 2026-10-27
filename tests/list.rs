@@ -264,7 +264,7 @@ fn list_with_groups_in_modules() {
   Test::new()
     .justfile(
       "
-        [group('FOO')]
+        [group: 'FOO']
         foo:
 
         mod bar
@@ -273,7 +273,7 @@ fn list_with_groups_in_modules() {
     .write(
       "bar.just",
       "
-        [group('BAZ')]
+        [group: 'BAZ']
         baz:
       ",
     )
@@ -629,7 +629,7 @@ fn empty_doc_attributes_are_ignored() {
   Test::new()
     .justfile(
       "
-        [doc(' ')]
+        [doc: ' ']
         foo bar:
       ",
     )

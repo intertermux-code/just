@@ -104,7 +104,7 @@ fn confirm_recipe_with_prompt() {
   Test::new()
     .justfile(
       "
-        [confirm('Sure?')]
+        [confirm: 'Sure?']
         @foo:
             echo FOO
       ",
@@ -141,14 +141,14 @@ fn confirm_attribute_is_formatted_correctly() {
   Test::new()
     .justfile(
       "
-        [confirm('prompt')]
+        [confirm: 'prompt']
         foo:
       ",
     )
     .arg("--dump")
     .stdout(
       "
-        [confirm('prompt')]
+        [confirm: 'prompt']
         foo:
       ",
     )
@@ -162,7 +162,7 @@ fn confirm_with_expression() {
       "
         target := 'production'
 
-        [confirm('Deploy to ' + target + '?')]
+        [confirm: 'Deploy to ' + target + '?']
         deploy:
             echo deployed
       ",
@@ -178,7 +178,7 @@ fn confirm_with_recipe_parameter() {
   Test::new()
     .justfile(
       "
-        [confirm('Deploy to ' + target + '?')]
+        [confirm: 'Deploy to ' + target + '?']
         deploy target:
             echo 'deployed to {{target}}'
       ",
@@ -197,7 +197,7 @@ fn confirm_expression_dump() {
       "
         target := 'production'
 
-        [confirm('Deploy to ' + target + '?')]
+        [confirm: 'Deploy to ' + target + '?']
         deploy:
             echo deployed
       ",
@@ -207,7 +207,7 @@ fn confirm_expression_dump() {
       "
         target := 'production'
 
-        [confirm('Deploy to ' + target + '?')]
+        [confirm: 'Deploy to ' + target + '?']
         deploy:
             echo deployed
       ",

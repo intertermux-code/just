@@ -280,14 +280,14 @@ fn show_prints_doc_attribute_without_doc_comment() {
   Test::new()
     .justfile(
       "
-        [doc('bar')]
+        [doc: 'bar']
         foo:
       ",
     )
     .args(["--show", "foo"])
     .stdout(
       "
-        [doc('bar')]
+        [doc: 'bar']
         foo:
       ",
     )

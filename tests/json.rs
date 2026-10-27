@@ -1105,7 +1105,7 @@ fn module() {
 fn module_doc_attribute_empty_string() {
   case_with_submodule(
     "
-      [doc('')]
+      [doc: '']
       mod foo
     ",
     Some(("foo.just", "bar:")),
@@ -1139,7 +1139,7 @@ fn module_doc_attribute_empty_string() {
 fn module_group() {
   case_with_submodule(
     "
-      [group('alpha')]
+      [group: 'alpha']
       mod foo
     ",
     Some(("foo.just", "bar:")),
@@ -1260,7 +1260,7 @@ fn doc_attribute_overrides_comment() {
   case(
     "
       # COMMENT
-      [doc('ATTRIBUTE')]
+      [doc: 'ATTRIBUTE']
       foo:
     ",
     Module {

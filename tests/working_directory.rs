@@ -440,7 +440,7 @@ fn attribute_with_expression() {
       "
         dir := 'foo'
 
-        [working-directory(dir + '-bar')]
+        [working-directory: dir + '-bar']
         @baz:
           echo bob > fred
       ",
@@ -488,7 +488,7 @@ fn attribute_with_expression_dump() {
       "
         dir := 'foo'
 
-        [working-directory(dir + '-bar')]
+        [working-directory: dir + '-bar']
         baz:
           echo bob
       ",
@@ -498,7 +498,7 @@ fn attribute_with_expression_dump() {
       "
         dir := 'foo'
 
-        [working-directory(dir + '-bar')]
+        [working-directory: dir + '-bar']
         baz:
             echo bob
       ",

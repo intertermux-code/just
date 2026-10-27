@@ -210,7 +210,7 @@ fn doc_attribute() {
     .justfile(
       "
         # Non-document comment
-        [doc('The real docstring')]
+        [doc: 'The real docstring']
         foo:
           echo foo
       ",
@@ -251,8 +251,8 @@ fn doc_multiline() {
   Test::new()
     .justfile(
       "
-        [doc('multiline
-        comment')]
+        [doc: 'multiline
+        comment']
         foo:
       ",
     )
@@ -274,7 +274,7 @@ fn doc_attribute_may_be_expression() {
     .justfile(
       "
         prefix := 'hello '
-        [doc(prefix + 'world')]
+        [doc: prefix + 'world']
         foo:
       ",
     )
@@ -295,7 +295,7 @@ fn doc_attribute_may_reference_variable_transitively() {
       "
         a := b
         b := 'bar'
-        [doc(a)]
+        [doc: a]
         foo:
       ",
     )
@@ -315,7 +315,7 @@ fn doc_attribute_list_is_joined() {
     .justfile(
       "
         set lists
-        [doc(['hello', 'world'])]
+        [doc: ['hello', 'world']]
         foo:
       ",
     )
@@ -336,7 +336,7 @@ fn doc_attribute_empty_list_is_no_doc() {
     .justfile(
       "
         set lists
-        [doc([])]
+        [doc: []]
         foo:
       ",
     )
@@ -457,7 +457,7 @@ fn shell_expanded_strings_can_be_used_in_attributes() {
   Test::new()
     .justfile(
       "
-        [doc(x'foo')]
+        [doc: x'foo']
         bar:
       ",
     )

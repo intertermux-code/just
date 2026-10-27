@@ -219,7 +219,7 @@ fn multi_line_doc() {
   Test::new()
     .justfile(
       "
-        [doc(\"foo\\nbar\")]
+        [doc: \"foo\\nbar\"]
         baz:
       ",
     )
